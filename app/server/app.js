@@ -38,6 +38,7 @@ function safeShutdownGuard(req, res, next) {
 // express
 app.use(safeShutdownGuard);
 app.use(session);
+app.set('trust proxy', true);
 if (config.accesslog) app.use(logger('common'));
 app.disable('x-powered-by');
 app.use(favicon(path.join(publicPath, 'favicon.ico')));

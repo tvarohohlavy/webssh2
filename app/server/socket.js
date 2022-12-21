@@ -109,7 +109,7 @@ module.exports = function appSocket(socket) {
       socket.emit('setTerminalOpts', socket.request.session.ssh.terminal);
       socket.emit('menu');
       socket.emit('allowreauth', socket.request.session.ssh.allowreauth);
-      socket.emit('title', `ssh://${socket.request.session.ssh.host}`);
+      socket.emit('title', `ssh://${socket.request.session.ssh.host}:${socket.request.session.ssh.port}`);
       if (socket.request.session.ssh.header.background)
         socket.emit('headerBackground', socket.request.session.ssh.header.background);
       if (socket.request.session.ssh.header.name)
